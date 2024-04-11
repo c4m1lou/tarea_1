@@ -73,7 +73,7 @@ void movimiento(char* tablero, int x, int y){
             }
             if (tablero[coordenadas_a_indice(x,y)] == '.'){
                 mostrar_movimiento(tablero, coordenadas_a_indice(x, y), '*');           //porfa prueba esto, segun yo el siguiente if deberia estar afuera pero cuando lo saque no me compilo XD
-                if (tablero[coordenadas_a_indice(aux_p, y)] == '.'){                    //tengo que sacar este if del if anterior
+                if (tablero[coordenadas_a_indice(aux_p, y)] == '.'|| tablero[coordenadas_a_indice(aux_p, y)] == '*'){     //tengo que sacar este if del if anterior
                     if (aux_p != 0){
                         mostrar_movimiento(tablero, coordenadas_a_indice(aux_p, y), '*');
                     }        
@@ -88,7 +88,7 @@ void movimiento(char* tablero, int x, int y){
             int y_nueva = y + posiciones_k_y[i];
             if (x_nueva >= 1 && x_nueva <= 8 && y_nueva >= 1 && y_nueva <= 8){
                 int indice_nuevo = coordenadas_a_indice(x_nueva,y_nueva);
-                if (tablero[indice_nuevo] == '.'){
+                if (tablero[indice_nuevo] == '.'|| tablero[indice_nuevo] == '*'){
                     mostrar_movimiento(tablero, indice_nuevo, '*');
                 }
             }
@@ -145,7 +145,7 @@ void movimiento(char* tablero, int x, int y){
             int y_nueva = y + posiciones_c_y[i];
             if (x_nueva >= 1 && x_nueva <= 8 && y_nueva >= 1 && y_nueva <= 8){
                 int indice_nuevo = coordenadas_a_indice(x_nueva, y_nueva);
-                if (tablero[indice_nuevo] == '.'){
+                if (tablero[indice_nuevo] == '.'|| tablero[indice_nuevo] == '*'){
                     mostrar_movimiento(tablero, indice_nuevo, '*');
                 }
             }
