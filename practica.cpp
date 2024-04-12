@@ -72,12 +72,12 @@ void movimiento(char* tablero, int x, int y){
                 aux_p = x - 1; 
             }
             if (tablero[coordenadas_a_indice(x,y)] == '.'){
-                mostrar_movimiento(tablero, coordenadas_a_indice(x, y), '*');           //porfa prueba esto, segun yo el siguiente if deberia estar afuera pero cuando lo saque no me compilo XD
-                if (tablero[coordenadas_a_indice(aux_p, y)] == '.'|| tablero[coordenadas_a_indice(aux_p, y)] == '*'){     //tengo que sacar este if del if anterior
-                    if (aux_p != 0){
-                        mostrar_movimiento(tablero, coordenadas_a_indice(aux_p, y), '*');
-                    }        
-                }
+                mostrar_movimiento(tablero, coordenadas_a_indice(x, y), '*');  
+                }         
+            if (tablero[coordenadas_a_indice(aux_p, y)] == '.'|| tablero[coordenadas_a_indice(aux_p, y)] == '*'){     
+                if (aux_p != 0){
+                    mostrar_movimiento(tablero, coordenadas_a_indice(aux_p, y), '*');
+                }        
             }
         }
         break;
@@ -217,14 +217,14 @@ int main(){
 
    //esto de aca tambien despues se puede borrar, lo use para probar las fichas
     tab_completo(tablero_completo, tamano_tablero);
-    movimiento(tablero_completo, tab.piezas_tablero[3].x, tab.piezas_tablero[3].y);  
+    movimiento(tablero_completo, tab.piezas_tablero[10].x, tab.piezas_tablero[10].y);  
     movimiento(tablero_completo, tab.piezas_tablero[2].x, tab.piezas_tablero[2].y); 
-    movimiento(tablero_completo, 2, 2);
+    movimiento(tablero_completo, tab.piezas_tablero[0].x, tab.piezas_tablero[0].y);
     movimiento(tablero_completo, tab.piezas_tablero[5].x, tab.piezas_tablero[5].y);
     movimiento(tablero_completo, tab.piezas_tablero[6].x, tab.piezas_tablero[6].y);
-    movimiento(tablero_completo, tab.piezas_tablero[12].x,tab.piezas_tablero[12].y);
-    movimiento(tablero_completo, tab.piezas_tablero[1].x,tab.piezas_tablero[1].y);
-    //movimiento(tablero_completo, 4, 3);
+    movimiento(tablero_completo, tab.piezas_tablero[12].x, tab.piezas_tablero[12].y);
+    movimiento(tablero_completo, tab.piezas_tablero[1].x, tab.piezas_tablero[1].y);
+    movimiento(tablero_completo, tab.piezas_tablero[11].x, tab.piezas_tablero[11].x);
 
 
 
